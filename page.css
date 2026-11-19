@@ -128,7 +128,7 @@ main{position:relative}
 .toc a::before{content:counter(toc);flex:none;min-width:1.4em;font-variant-numeric:tabular-nums;color:var(--text-2)}
 .toc a:hover{color:var(--text)}
 @media (max-width:900px){
-  .prose-grid{grid-template-columns:1fr}
+  .prose-grid{grid-template-columns:minmax(0,1fr)}
   .toc{position:static;order:-1}
 }
 
@@ -190,3 +190,6 @@ a.card:hover{transform:translateY(-3px);border-color:var(--text)}
 
 @media (max-width:759px){body{font-size:17px}}
 @media (prefers-reduced-motion: reduce){*,*::before,*::after{transition-duration:.01ms!important;animation-duration:.01ms!important;scroll-behavior:auto!important}}
+.summary{margin:0 0 28px;padding:20px 22px;border:1px solid var(--line);border-radius:18px;background:var(--raised)}
+.summary h2{margin:0 0 10px !important;font-size:1.15rem !important}
+.summary ul{margin:0}
