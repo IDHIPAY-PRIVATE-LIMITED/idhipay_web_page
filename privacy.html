@@ -71,10 +71,10 @@ footer { border-top: 1px solid var(--rule); margin-top: 2.5rem; padding-top: 1re
 <header>
 <p class="eyebrow">IDHIPAY PRIVATE LIMITED</p>
 <h1>IDHIPAY Business: Privacy Policy</h1>
-<p class="meta">Effective date: 11 November 2026</p>
+<p class="meta">Effective date: 19 November 2026</p>
 </header>
 
-<p>This policy explains how IDHIPAY PRIVATE LIMITED ("IDHIPAY", "we", "us") handles personal data in the <strong>IDHIPAY Business</strong> app for Android (package <code>in.idhipay.merchant</code>) and the services behind it. It is written to meet India's Digital Personal Data Protection Act, 2023 (the "DPDP Act") and the Digital Personal Data Protection Rules, 2025.</p>
+<p>This policy explains how IDHIPAY PRIVATE LIMITED ("IDHIPAY", "we", "us") handles personal data in the <strong>IDHIPAY Business</strong> app for Android and iPhone (package and bundle ID <code>in.idhipay.merchant</code>) and the services behind it. It is written to meet India's Digital Personal Data Protection Act, 2023 (the "DPDP Act") and the Digital Personal Data Protection Rules, 2025.</p>
 
 <section class="summary" aria-labelledby="short">
 <h2 id="short">The short version</h2>
@@ -139,9 +139,10 @@ footer { border-top: 1px solid var(--rule); margin-top: 2.5rem; padding-top: 1re
 <thead><tr><th>Data</th><th>Why we use it</th></tr></thead>
 <tbody>
 <tr><td>One-time sign-in codes</td><td>To check that you have your registered mobile number. We store only a one-way hash of each code, never the code itself.</td></tr>
-<tr><td>A random identifier the app creates on your phone, and your phone's platform (Android)</td><td>To link your sign-in to that phone, and to tell you when your account signs in on a new phone</td></tr>
+<tr><td>A random identifier the app creates on your phone, and your phone's platform (Android or iOS)</td><td>To link your sign-in to that phone, and to tell you when your account signs in on a new phone</td></tr>
 <tr><td>Sign-in tokens</td><td>To keep you signed in. They are kept in your phone's secure storage, and on our servers only as one-way hashes.</td></tr>
-<tr><td>A Google Play Integrity check at sign-in</td><td>To confirm that sign-in comes from a genuine copy of the app installed from Google Play, on a genuine device (section 5)</td></tr>
+<tr><td>On Android, a Google Play Integrity check at sign-in</td><td>To confirm that sign-in comes from a genuine copy of the app installed from Google Play, on a genuine device (section 5)</td></tr>
+<tr><td>On iPhone, an Apple App Attest check at sign-in: a key your iPhone creates for the app, which Apple certifies. We keep the key's identifier and public key.</td><td>To confirm that sign-in comes from a genuine copy of the app installed from the App Store, on a genuine device (section 5)</td></tr>
 <tr><td>The network (IP) address of requests to our servers</td><td>To limit repeated sign-in attempts, protect our service from abuse, and in our security logs. We do not use it to find your location.</td></tr>
 <tr><td>App version</td><td>To tell you when you need to update the app</td></tr>
 </tbody>
@@ -188,14 +189,15 @@ footer { border-top: 1px solid var(--rule); margin-top: 2.5rem; padding-top: 1re
 <tr><td><strong>Amazon Web Services</strong></td><td>All the data we store</td><td>Hosting our servers, database, backups and logs</td><td>India (Mumbai, with backup copies in Hyderabad)</td></tr>
 <tr><td><strong>SMS providers</strong>: Fast2SMS, or Amazon Web Services as an alternative, and the Indian telecom operators that deliver the message</td><td>Your mobile number and the sign-in code</td><td>Sending your sign-in code by SMS</td><td>India</td></tr>
 <tr><td><strong>Google</strong> (Google Play Integrity)</td><td>Information about the app and your device that Google uses to check they are genuine, and a hash of the sign-in request. Not your mobile number or any payment data.</td><td>Checking the app and device at sign-in</td><td>Google's servers, which may be outside India <span class="counsel"></span></td></tr>
+<tr><td><strong>Apple</strong> (App Attest, on iPhone)</td><td>When the app first signs in on an iPhone, the iPhone asks Apple to certify the app's key, and Apple uses information about the app and the device to do so. Not your mobile number or any payment data. We check Apple's certificate on our own servers.</td><td>Checking the app and device at sign-in</td><td>Apple's servers, which may be outside India <span class="counsel"></span></td></tr>
 <tr><td>Government bodies, regulators, courts and law enforcement</td><td>What the law or a lawful order requires</td><td>Meeting legal duties, for example directions of the Reserve Bank of India or CERT-In, or a court order</td><td>India</td></tr>
 </tbody>
 </table>
 </div>
-<p>Google Play also processes data when you download and update the app, under Google's own privacy policy.</p>
+<p>Google Play (on Android) and the App Store (on iPhone) also process data when you download and update the app, under Google's and Apple's own privacy policies.</p>
 
 <h2 id="where">6. Where data is stored</h2>
-<p>We store your data in India, on Amazon Web Services in Mumbai, with backup copies in Hyderabad. Payment data stays in India, as the Reserve Bank of India's directions on storage of payment system data require. The only transfer outside India is the Google Play Integrity check described in section 5, which carries no payment data. <span class="counsel"></span></p>
+<p>We store your data in India, on Amazon Web Services in Mumbai, with backup copies in Hyderabad. Payment data stays in India, as the Reserve Bank of India's directions on storage of payment system data require. The only transfers outside India are the app checks described in section 5 (Google Play Integrity on Android and Apple App Attest on iPhone), which carry no payment data. <span class="counsel"></span></p>
 
 <h2 id="keep">7. How long we keep data</h2>
 <div class="table-wrap">
@@ -217,8 +219,8 @@ footer { border-top: 1px solid var(--rule); margin-top: 2.5rem; padding-top: 1re
 <ul>
 <li>All traffic between the app and our servers is encrypted (HTTPS/TLS).</li>
 <li>Our database and backups are encrypted at rest. Mobile numbers and payers' names and UPI IDs are also encrypted field by field.</li>
-<li>Sign-in codes and tokens are stored only as one-way hashes. Tokens on your phone are kept in Android's secure storage.</li>
-<li>Sign-in is checked with Google Play Integrity, and repeated attempts are limited.</li>
+<li>Sign-in codes and tokens are stored only as one-way hashes. Tokens on your phone are kept in its secure storage, protected by the Android Keystore or the iPhone Keychain.</li>
+<li>Sign-in is checked with Google Play Integrity on Android and Apple App Attest on iPhone, and repeated attempts are limited.</li>
 <li>Access to our systems is restricted, needs multi-factor sign-in, and is logged. Sensitive admin actions need a second person to approve them.</li>
 </ul>
 <p>No system is perfectly secure. If a personal data breach happens, we will tell the people affected and the Data Protection Board of India, as the DPDP Rules require.</p>
